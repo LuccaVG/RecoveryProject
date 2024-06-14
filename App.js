@@ -32,6 +32,6 @@ export default function App() {
         />
     </Stack.Navigator>
 </NavigationContainer>
-//selecionando a pagina home para ser mostrada
+//selecionando a pagina Perfil para ser mostrada
   );
 }

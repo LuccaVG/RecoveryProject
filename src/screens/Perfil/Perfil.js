@@ -1,5 +1,5 @@
-import { PerfilBackGround } from "../../components/PerfilComponent/PerfilComponent"
-import { Seta } from "../../components/PerfilComponent/PerfilComponent"
+import { PerfilBackGround } from "../../components/PerfilComponent/PerfilComponent";
+import { Seta } from "../../components/PerfilComponent/PerfilComponent";
 import { MaterialIcons } from '@expo/vector-icons';
 import { ImagemLinda } from "../../components/PerfilComponent/PerfilComponent";
 import { CameraWhiteBackGround } from "../../components/PerfilComponent/PerfilComponent";
@@ -19,12 +19,18 @@ import { RaTextInput } from "../../components/PerfilComponent/PerfilComponent";
 import { TurmaTextInput } from "../../components/PerfilComponent/PerfilComponent";
 import { Titulo } from "../../components/PerfilComponent/PerfilComponent";
 import { SubTitulo } from "../../components/PerfilComponent/PerfilComponent";
+import CameraComponent from "../../components/CameraComponent/CameraComponent";
+import { useState } from "react";
 
 //Importando os componentes Criados No PerfilComponents e outras paradas dos icones
 
-
-//Montando a estrutura da Pagina com os components pre criados e inserindo textos/icones
 export const Perfil = () => {
+    const [isCameraVisible, setIsCameraVisible] = useState(false);
+
+    const toggleCameraVisibility = () => {
+        setIsCameraVisible(!isCameraVisible);
+    };
+
     return (
         <PerfilBackGround>
             <Seta>
@@ -35,21 +41,25 @@ export const Perfil = () => {
                     <FontAwesome name="user-circle-o" size={100} color="#B287FF" />
                 </ImagemCss>
             </ImagemLinda>
-            <CameraWhiteBackGround>
+
+            <CameraWhiteBackGround onPress={toggleCameraVisibility}>
                 <MaterialIcons name="photo-camera" size={35} color="#A06AFF" />
             </CameraWhiteBackGround>
-                <Titulo>Nome do aluno</Titulo>
-                <SubTitulo>Turma do aluno</SubTitulo>
+
+            {/* {isCameraVisible && <CameraComponent />} */}
+            
+            <Titulo>Nome do aluno</Titulo>
+            <SubTitulo>Turma do aluno</SubTitulo>
             <BottomOnAHeader>
-                    <NomeText>Nome</NomeText>
+                <NomeText>Nome</NomeText>
                 <NameInput>
                     <NameTextInput>Insira seu Nome:</NameTextInput>
                 </NameInput>
-                    <RaText>RA</RaText>
+                <RaText>RA</RaText>
                 <RaInput>
                     <RaTextInput>Insira seu RA:</RaTextInput>
                 </RaInput>
-                    <TurmaText>Turma</TurmaText>
+                <TurmaText>Turma</TurmaText>
                 <TurmaInput>
                     <TurmaTextInput>Insira sua Turma:</TurmaTextInput>
                 </TurmaInput>
@@ -57,8 +67,10 @@ export const Perfil = () => {
                     <EditarText>EDITAR</EditarText>
                 </EditarButton>
             </BottomOnAHeader>
-        </PerfilBackGround>
-    )
-}
 
-//Engolindo o Choro e Fazendo o L
+            <CameraComponent 
+                visible={isCameraVisible}
+            />
+        </PerfilBackGround>
+    );
+};

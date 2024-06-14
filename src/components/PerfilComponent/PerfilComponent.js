@@ -10,11 +10,13 @@ export const PerfilBackGround = styled.SafeAreaView`
     background-color: #FFFBEB;
     width: 100%;
     height: 100%;
+    overflow: 'visible';
 `
 
 export const Seta = styled.SafeAreaView`
     right: 180px;
     top: 22px;
+    overflow: 'visible';
 `
 
 export const ImagemLinda = styled.SafeAreaView`
@@ -25,8 +27,9 @@ export const ImagemLinda = styled.SafeAreaView`
     top: 55px;
     align-items: 'center';
     position: absolute;
+    overflow: 'visible';
 `
-export const CameraWhiteBackGround = styled.SafeAreaView`
+export const CameraWhiteBackGround = styled.TouchableOpacity`
     height: 35px;
     width: 35px;
     background-color: #FFFFFF;
@@ -34,11 +37,13 @@ export const CameraWhiteBackGround = styled.SafeAreaView`
     top: 124px;
     left: 50px;
     align-items: 'center';
+    overflow: 'visible';
 `
 
 export const ImagemCss = styled.SafeAreaView`
     left: 30px;
     top: 30px;
+    overflow: 'visible';
 `
 export const BottomOnAHeader = styled.SafeAreaView`
     height: 546px;
@@ -48,6 +53,7 @@ export const BottomOnAHeader = styled.SafeAreaView`
     background-color: #B88FFF;
     align-items: 'center';
     border-radius: 25px;
+    overflow: 'visible';
 `
 
 export const NameInput = styled.SafeAreaView`
@@ -59,6 +65,7 @@ export const NameInput = styled.SafeAreaView`
     left: 50px;
     top: 25px;
     margin-bottom: 20px;
+    overflow: 'visible';
 `
 
 export const RaInput = styled.SafeAreaView`
@@ -70,6 +77,7 @@ export const RaInput = styled.SafeAreaView`
     left: 50px;
     top: 25px;
     margin-bottom: 20px;
+    overflow: 'visible';
 `
 
 export const TurmaInput = styled.SafeAreaView`
@@ -81,6 +89,7 @@ export const TurmaInput = styled.SafeAreaView`
     left: 50px;
     top: 25px;
     margin-bottom: 5px;
+    overflow: 'visible';
 `
 
 export const EditarButton = styled.TouchableOpacity`
@@ -90,6 +99,7 @@ export const EditarButton = styled.TouchableOpacity`
     background-color: #5B26BA;
     left: 92px;
     top: 45px;
+    overflow: 'visible';
 `
 
 export const NomeText = styled.Text`
@@ -97,6 +107,7 @@ export const NomeText = styled.Text`
     left: 60px;
     top: 25px;
     color: #FFFFFF;
+    overflow: 'visible';
 `
 
 export const RaText = styled.Text`
@@ -104,6 +115,7 @@ export const RaText = styled.Text`
     left: 60px;
     top: 25px;
     color: #FFFFFF;
+    overflow: 'visible';
 `
 
 export const TurmaText = styled.Text`
@@ -111,6 +123,7 @@ export const TurmaText = styled.Text`
     left: 60px;
     top: 25px;
     color: #FFFFFF;
+    overflow: 'visible';
 `
 
 export const EditarText = styled.Text`
@@ -118,6 +131,7 @@ export const EditarText = styled.Text`
     left: 86px;
     top: 10px;
     color: #FFFFFF;
+    overflow: 'visible';
 `
 
 export const NameTextInput = styled.TextInput`
@@ -125,12 +139,14 @@ export const NameTextInput = styled.TextInput`
     left: 16px;
     top: 12px;
     color: #8400F2;
+    overflow: 'visible';
 `
 export const RaTextInput = styled.TextInput`
     font-size: 18px;
     left: 16px;
     top: 12px;
     color: #8400F2;
+    overflow: 'visible';
 `
 
 export const TurmaTextInput = styled.TextInput`
@@ -138,16 +154,19 @@ export const TurmaTextInput = styled.TextInput`
     left: 16px;
     top: 12px;
     color: #8400F2;
+    overflow: 'visible';
 `
 
 export const Titulo = styled.Text`
     font-size: 26px;
     color: #8400F2;
     top: 150px;
+    overflow: 'visible';
 `
 
 export const SubTitulo = styled.Text`
     font-size: 16px;
     color: #8400F2;
     top: 160px;
+    overflow: 'visible';
 `
