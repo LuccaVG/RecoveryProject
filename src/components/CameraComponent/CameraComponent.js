@@ -2,7 +2,7 @@ import { CameraView, useCameraPermissions } from 'expo-camera';
 import { useState, useRef } from 'react';
 import { Button, StyleSheet, Text, TouchableOpacity, View, Modal, Image } from 'react-native';
 
-export default function CameraComponent({ visible }) {
+export default function CameraComponent({ visible, onClose, onPictureTaken }) {
     const [facing, setFacing] = useState('back');
     const [permission, requestPermission] = useCameraPermissions();
     const [photoUri, setPhotoUri] = useState(null);
@@ -31,6 +31,7 @@ export default function CameraComponent({ visible }) {
         if (cameraRef.current) {
             const photo = await cameraRef.current.takePictureAsync();
             setPhotoUri(photo.uri);
+            onPictureTaken(photo.uri);
         }
     }
 
@@ -45,6 +46,9 @@ export default function CameraComponent({ visible }) {
                                 <TouchableOpacity style={styles.button} onPress={() => setPhotoUri(null)}>
                                     <Text style={styles.text}>Return to Camera</Text>
                                 </TouchableOpacity>
+                                <TouchableOpacity style={styles.button} onPress={onClose}>
+                                    <Text style={styles.text}>Save and Return</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     ) : (
@@ -55,6 +59,9 @@ export default function CameraComponent({ visible }) {
                                 </TouchableOpacity>
                                 <TouchableOpacity style={styles.button} onPress={takePicture}>
                                     <Text style={styles.text}>Take Picture</Text>
+                                </TouchableOpacity>
+                                <TouchableOpacity style={styles.button} onPress={onClose}>
+                                    <Text style={styles.text}>Return to Profile</Text>
                                 </TouchableOpacity>
                             </View>
                         </CameraView>
@@ -70,7 +77,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         position: 'relative',
-        left: 1.5,
     },
     camera: {
         flex: 1,
