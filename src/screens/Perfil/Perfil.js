@@ -24,6 +24,8 @@ import { useState } from "react";
 
 //Importando os componentes Criados No PerfilComponents e outras paradas dos icones
 
+//Montando os componentes pre-criados
+
 export const Perfil = () => {
     const [isCameraVisible, setIsCameraVisible] = useState(false);
 
@@ -74,3 +76,5 @@ export const Perfil = () => {
         </PerfilBackGround>
     );
 };
+
+//Engolindo o choro e Fazendo o L
